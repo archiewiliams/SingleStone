@@ -1,0 +1,35 @@
+
+CREATE TABLE Contact (
+	ContactID int identity(1,1) primary key,
+	Email varchar(50)
+)
+
+CREATE TABLE Name (
+	NameID int identity(1,1) primary key,
+	ContactID int,
+	First varchar(50),
+	Middle varchar(50),
+	Last varchar(50)
+)
+
+CREATE TABLE Address (
+	AddressID int identity(1,1) primary key,
+	ContactID int,
+	Street varchar(100),
+	City varchar(50),
+	State varchar(50),
+	Zip varchar(15)
+)
+
+CREATE TABLE Phone (
+	PhoneID int identity(1,1) primary key,
+	ContactID int,
+	Number varchar(20),
+	Type varchar(12)
+)
+
+insert into Contact (Email) VALUES ('harold.gilkey@yahoo.com')
+
+insert into Name (ContactID, First, Middle, Last) VALUES (1, 'Harold', 'Francis', 'Gilkey')
+insert into Address (ContactID, Street, City, State, Zip) VALUES (1, '8360 High Autumn Row', 'Cannon', 'Delaware', '19797')
+insert into Phone (ContactID, Number, Type) VALUES (1, '302-611-9148', 'mobile') 
